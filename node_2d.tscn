@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://b6oxc1v866cer"]
+
+[ext_resource type="Texture2D" uid="uid://wafufsn5kn1j" path="res://icon.svg" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://bhth1r5cs2gc0" path="res://player.gd" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://cqtqaodehfj4b" path="res://assets/bg1.png" id="2_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://bps182mc4evhe" path="res://assets/sagres.png" id="4_kdubu"]
+[ext_resource type="Texture2D" uid="uid://i6jxtlciy60d" path="res://assets/player_spritesheet.png" id="5_q6r6c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdubu"]
+atlas = ExtResource("5_q6r6c")
+region = Rect2(0, 0, 194, 297)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d21ai"]
+atlas = ExtResource("5_q6r6c")
+region = Rect2(194, 0, 194, 297)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj586"]
+atlas = ExtResource("5_q6r6c")
+region = Rect2(388, 0, 194, 297)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d7sh"]
+atlas = ExtResource("5_q6r6c")
+region = Rect2(582, 0, 194, 297)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdubu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d21ai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj586")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d7sh")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3iyoq"]
+size = Vector2(128, 128)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0hol4"]
+a = Vector2(-392, 416)
+b = Vector2(760, 416)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3iyoq"]
+a = Vector2(-394, -194)
+b = Vector2(-394, 454)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_oqq8t"]
+a = Vector2(758, -194)
+b = Vector2(758, 454)
+
+[node name="Node2D" type="Node2D" unique_id=1981697481]
+position = Vector2(394, 194)
+
+[node name="Background" type="TextureRect" parent="." unique_id=1878453821]
+offset_left = -394.0
+offset_top = -194.0
+offset_right = 1278.0
+offset_bottom = 747.0
+scale = Vector2(0.69, 0.69)
+texture = ExtResource("2_q6r6c")
+
+[node name="Label" type="Label" parent="." unique_id=1962945786]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 54.0
+offset_top = -385.99997
+offset_right = 873.0
+offset_bottom = 23.00003
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.34, 0.34)
+theme_override_font_sizes/font_size = 300
+text = "drugs"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Tutorial Keys" type="Sprite2D" parent="." unique_id=170660219]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=649200466]
+script = ExtResource("2_epypp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=701585659]
+position = Vector2(-213, 129)
+scale = Vector2(0.7061856, 0.7121212)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+frame_progress = 0.8604505
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=762942675]
+position = Vector2(-260, 223)
+shape = SubResource("RectangleShape2D_3iyoq")
+
+[node name="Dad" type="Sprite2D" parent="." unique_id=1419265160]
+position = Vector2(598, 246)
+texture = ExtResource("2_0e48y")
+
+[node name="Bottle" type="Sprite2D" parent="." unique_id=1404022030]
+position = Vector2(494, 102)
+scale = Vector2(1.94, 1.94)
+texture = ExtResource("4_kdubu")
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=1112487947]
+
+[node name="WallsCollision" type="CollisionShape2D" parent="Floor" unique_id=421002370]
+position = Vector2(-2, -56)
+shape = SubResource("SegmentShape2D_0hol4")
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=146669363]
+
+[node name="Left" type="CollisionShape2D" parent="Walls" unique_id=377021323]
+shape = SubResource("SegmentShape2D_3iyoq")
+
+[node name="Right" type="CollisionShape2D" parent="Walls" unique_id=709041409]
+shape = SubResource("SegmentShape2D_oqq8t")

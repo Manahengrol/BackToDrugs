@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://d2sn322yigdtv"]
+
+[ext_resource type="Script" uid="uid://cphus4ij5wxnf" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://c54rtj0hoto21" path="res://assets/start.png" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://l8ah56fs47e5" path="res://assets/mainmenubg.png" id="2_glbon"]
+[ext_resource type="Texture2D" uid="uid://ldc85y83rilb" path="res://assets/credits.png" id="3_jix8l"]
+[ext_resource type="Texture2D" uid="uid://io3uk12tscml" path="res://assets/exit.png" id="4_glbon"]
+[ext_resource type="Texture2D" uid="uid://cfpky0p6smbuo" path="res://assets/start_outline.png" id="4_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://2o5punshymyw" path="res://assets/credits_outline.png" id="6_qe12f"]
+[ext_resource type="Texture2D" uid="uid://c313t173ussyi" path="res://assets/exit_outline.png" id="8_8qtwp"]
+
+[node name="Main menu" type="Node2D" unique_id=2144457801]
+script = ExtResource("1_06t4h")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1913858967]
+offset_right = 1814.1732
+offset_bottom = 1067.0
+scale = Vector2(0.635, 0.635)
+texture = ExtResource("2_glbon")
+
+[node name="Menu buttons" type="Control" parent="." unique_id=532542871]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="TextureButton" parent="Menu buttons" unique_id=435426873]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 64.0
+offset_right = 880.0
+offset_bottom = 264.0
+scale = Vector2(0.73, 0.73)
+texture_normal = ExtResource("2_7vrkn")
+texture_hover = ExtResource("4_nlkkf")
+
+[node name="StartOld" type="Button" parent="Menu buttons" unique_id=1034192841]
+visible = false
+layout_mode = 0
+offset_left = 71.0
+offset_top = 36.0
+offset_right = 472.66666
+offset_bottom = 173.66667
+scale = Vector2(1.5, 1.5)
+theme_override_font_sizes/font_size = 100
+action_mode = 0
+icon = ExtResource("2_7vrkn")
+flat = true
+expand_icon = true
+
+[node name="Credits" type="TextureButton" parent="Menu buttons" unique_id=1130100968]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 236.0
+offset_right = 888.0
+offset_bottom = 436.0
+scale = Vector2(0.71, 0.71)
+texture_normal = ExtResource("3_jix8l")
+texture_hover = ExtResource("6_qe12f")
+
+[node name="CreditsOld" type="Button" parent="Menu buttons" unique_id=1817163488]
+visible = false
+layout_mode = 0
+offset_left = 67.0
+offset_top = 210.0
+offset_right = 472.0
+offset_bottom = 339.0
+scale = Vector2(1.5, 1.5)
+theme_override_font_sizes/font_size = 100
+action_mode = 0
+icon = ExtResource("3_jix8l")
+flat = true
+expand_icon = true
+
+[node name="Exit" type="TextureButton" parent="Menu buttons" unique_id=1197045558]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 408.0
+offset_right = 896.0
+offset_bottom = 608.0
+scale = Vector2(0.695, 0.695)
+texture_normal = ExtResource("4_glbon")
+texture_hover = ExtResource("8_8qtwp")
+
+[node name="ExitOld" type="Button" parent="Menu buttons" unique_id=426130915]
+visible = false
+layout_mode = 0
+offset_left = 88.0
+offset_top = 376.00003
+offset_right = 498.0
+offset_bottom = 507.00003
+scale = Vector2(1.5, 1.5)
+theme_override_font_sizes/font_size = 100
+action_mode = 0
+icon = ExtResource("4_glbon")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="Menu buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Menu buttons/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Menu buttons/Exit" to="." method="_on_exit_pressed"]

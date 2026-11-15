@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://doo1opf7teqi1"]
+
+[ext_resource type="Script" uid="uid://cktvahy4fmw61" path="res://credits.gd" id="1_nm7lk"]
+
+[node name="Credits" type="Node2D" unique_id=610798644]
+script = ExtResource("1_nm7lk")
+
+[node name="Label" type="Label" parent="." unique_id=1994094306]
+offset_right = 1153.0
+offset_bottom = 646.0
+theme_override_font_sizes/font_size = 25
+text = "Scripting - Rodrigo Henriques, Joana Serol
+
+Audio - Rodrigo Henriques
+
+Art - Joana Serol, Rodrigo Henriques
+
+doing shi on godot - Rodrigo Henriques, Joana Serol, (and Alice sometimes)
+
+sleep like 4 hours - ALICE
+
+DID NOT SLEEP OUT OF DEDICATION TO THE GAME (trust): JOANA AND RODRIGO
+
+Vibe Coding everything - Alice"
+
+[node name="Buttun Manager" type="Control" parent="." unique_id=2058363341]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Buttun Manager" unique_id=2009093610]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 556.0
+offset_right = 234.0
+offset_bottom = 637.0
+theme_override_font_sizes/font_size = 50
+text = "<= Exit"
+
+[connection signal="pressed" from="Buttun Manager/Button" to="." method="_on_button_pressed"]

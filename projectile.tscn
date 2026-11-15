@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cy1masaxifaj1"]
+
+[ext_resource type="Script" uid="uid://cvy3wfj6x27j7" path="res://projectile.gd" id="1_qxf0c"]
+[ext_resource type="Texture2D" uid="uid://bps182mc4evhe" path="res://assets/sagres.png" id="2_dgwo2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 16.0
+
+[node name="Projectile" type="Area2D" unique_id=1209080035]
+script = ExtResource("1_qxf0c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1009673579]
+position = Vector2(3, -2)
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=359707119]
+position = Vector2(1.625001, -2.374998)
+scale = Vector2(0.46750003, 0.3725)
+texture = ExtResource("2_dgwo2")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=655268232]
+position = Vector2(-1, -4)
+rect = Rect2(-6, -19, 18, 41)
